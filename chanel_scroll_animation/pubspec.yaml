@@ -45,9 +45,14 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
-  #   - images/a_dot_ham.jpeg
+  assets:
+    - chanel.jpg
+    - sonnie-hiles-pU4J5VFnqCQ-unsplash-with-gradient.jpg
+    - laura-chouette-NFrPPyGe5q0-unsplash-with-gradient.jpg
+    - butsarakham-buranaworachot-au6Gddf1pZQ-unsplash.jpg
+    - khaled-ghareeb-upepKTbwm3A-unsplash.jpg
+    - christopher-campbell-A3QXXEfcA1U-unsplash.jpg
+    - chase-fade-Pb13EUxzMDw-unsplash.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
