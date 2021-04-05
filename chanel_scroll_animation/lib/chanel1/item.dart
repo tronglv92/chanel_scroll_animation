@@ -38,8 +38,11 @@ class _ItemState extends State<Item> {
   }
   @override
   Widget build(BuildContext context) {
-
+    // final Size size=MediaQuery.of(context).size;
     double height=ipHeight!=null? ipHeight.eval(widget.y):MIN_HEIGHT;
+
+    // print("height "+height.toString());
+
     return Container(
       height: height,
       child: Stack(

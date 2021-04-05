@@ -1,4 +1,5 @@
 import 'package:chanel_scroll_animation/chanel1/item.dart';
+import 'package:chanel_scroll_animation/chanel1/snapping_list_view.dart';
 import 'package:chanel_scroll_animation/models/model.dart';
 import 'package:flutter/material.dart';
 
@@ -18,7 +19,7 @@ class _Chanel1PageState extends State<Chanel1Page> {
     super.initState();
     _scrollController=new ScrollController();
     _scrollController.addListener(() {
-      print("_scrollController.offset.toString() "+_scrollController.offset.toString());
+      // print("_scrollController.offset.toString() "+_scrollController.offset.toString());
 
 
       setState(() {
@@ -39,16 +40,19 @@ class _Chanel1PageState extends State<Chanel1Page> {
 
   @override
   Widget build(BuildContext context) {
-
+    final scrollPhysics = SnappingListScrollPhysics(
+        snapInterval:maxHeight,
+        itemExtent: maxHeight);
     return Scaffold(
       body: SafeArea(
-        child: ListView(
-
-          physics: ClampingScrollPhysics(),
+        child: maxHeight!=0?ListView(
           controller: _scrollController,
+           physics: scrollPhysics,
+            scrollDirection: Axis.vertical,
           children: [
+
             Container(
-              height:  ( models.length + 1) * maxHeight,
+              height:  ( models.length +1) * maxHeight,
 
               child: Column(
                 children: [
@@ -59,8 +63,9 @@ class _Chanel1PageState extends State<Chanel1Page> {
             )
 
           ],
-        ),
+        ):Container(),
       ),
+
     );
   }
 }
